@@ -9,22 +9,21 @@ public class Shadow_Moveemnt : MonoBehaviour {
     private float speed;
 
     [SerializeField]
-    private GameObject childShadow;
+    private GameObject ShadowPrefab;
 
     [SerializeField]
     private float Z_plane_position;
-
 
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody>();
 
-        GameObject child = Instantiate(childShadow, transform.position, transform.rotation);
+        GameObject child = Instantiate(ShadowPrefab, transform.position, transform.rotation);
         child.transform.position = new Vector3(child.transform.position.x, child.transform.position.y, Z_plane_position);
         child.transform.SetParent(this.transform);
     }
-
+    
     // Update is called once per frame
     void FixedUpdate()
     {
