@@ -381,7 +381,7 @@ MonoBehaviour:
   speed: 5
   childShadow: {fileID: 1255362798378192, guid: f75c013147cc8624a8b3241cc1e70dd5,
     type: 2}
-  Z_plane_position: -1
+  Z_plane_position: -1.5
 --- !u!1 &1006406192
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,7 +543,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1458551545}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.89, y: 5.07, z: -1.4}
+  m_LocalPosition: {x: 4.02, y: 5.07, z: -1.4}
   m_LocalScale: {x: 0.29736537, y: 0.29736543, z: 0.29736543}
   m_Children: []
   m_Father: {fileID: 0}
@@ -573,7 +573,7 @@ GameObject:
   - component: {fileID: 1501250636}
   - component: {fileID: 1501250635}
   m_Layer: 0
-  m_Name: Camera (1)
+  m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -611,8 +611,8 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
-  orthographic: 1
+  field of view: 30
+  orthographic: 0
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
@@ -635,13 +635,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1501250634}
-  m_LocalRotation: {x: 0.053012468, y: 0.9102587, z: -0.12297287, w: 0.39178634}
-  m_LocalPosition: {x: -5.75, y: 7.36, z: 7.42}
+  m_LocalRotation: {x: 0.027242128, y: 0.9703858, z: -0.13111266, w: 0.2010441}
+  m_LocalPosition: {x: -4.86, y: 8.13, z: 14.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 15.392001, y: 133.42601, z: 0.009000001}
+  m_LocalEulerAnglesHint: {x: 15.392001, y: 156.591, z: 0.009000001}
 --- !u!1 &1607950167
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,7 +743,7 @@ MonoBehaviour:
   speed: 5
   childShadow: {fileID: 1847997920214644, guid: 464ca81cd1280f845a666da6304d9770,
     type: 2}
-  Z_plane_position: -1
+  Z_plane_position: -1.5
 --- !u!54 &1607950173
 Rigidbody:
   m_ObjectHideFlags: 0
