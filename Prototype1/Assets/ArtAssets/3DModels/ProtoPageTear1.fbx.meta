@@ -6,21 +6,11 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: Book_Pages2
-    2100002: Book_Pages
+    2100002: Book_Pages3
     2300000: //RootNode
     3300000: //RootNode
     4300000: PageTear
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Book_Pages
-    second: {fileID: 2100000, guid: 124418908d2b4b1448b33b0feef9ee7e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Book_Pages2
-    second: {fileID: 2100000, guid: 88c828fa700cf894a8ec8c83455e3bcb, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
