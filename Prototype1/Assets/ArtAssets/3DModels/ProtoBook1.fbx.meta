@@ -10,7 +10,17 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: ProtoBook
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Book_Cover
+    second: {fileID: 2100000, guid: 1741f31637d92854ab644f201b36eed9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Book_Pages
+    second: {fileID: 2100000, guid: 19e4d166f92b17241812bad6580e2aa6, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
