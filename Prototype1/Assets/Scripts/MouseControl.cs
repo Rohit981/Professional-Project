@@ -16,10 +16,12 @@ public class MouseControl : MonoBehaviour
     private float rightBoundaryX;
 
     private bool selected = false;
+    private bool soundIsPlaying = false;
 
     // Use this for initialization
     void Start()
     {
+        GetComponent<AudioSource>().enabled = true;
         leftBoundaryX = gameObject.transform.position.x + leftBoundaryOffset;
         rightBoundaryX = gameObject.transform.position.x - rightBoundaryOffset;
     }
@@ -59,7 +61,17 @@ public class MouseControl : MonoBehaviour
             {
                 // add left right mouse movement to the X value of the object's transform
                 transform.position += new Vector3(-moveLR, 0, 0);
+                if (!soundIsPlaying)
+                {
+                    GetComponent<AudioSource>().Play();
+                    soundIsPlaying = true;
+                }
             }
+        }
+        else
+        {
+            GetComponent<AudioSource>().Stop();
+            soundIsPlaying = false;
         }
     }
 
