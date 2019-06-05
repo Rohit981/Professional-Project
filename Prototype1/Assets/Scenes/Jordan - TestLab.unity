@@ -326,6 +326,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivityX: 10
+  leftBoundaryOffset: 4
+  rightBoundaryOffset: 2
 --- !u!95 &119881809
 Animator:
   serializedVersion: 3
@@ -358,6 +360,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 74db7e6d18c391141a915706ae6337c7, type: 3}
+--- !u!114 &119881813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 119881806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: defb3335ea83d194cbc72edd9aacea73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tabThatWillBeParent: {fileID: 717023460}
 --- !u!1 &133542327
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,6 +1004,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivityX: 10
+  leftBoundaryOffset: 4
+  rightBoundaryOffset: 2
 --- !u!64 &505058346
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1004,6 +1020,18 @@ MeshCollider:
   m_CookingOptions: -1
   m_SkinWidth: 0.05
   m_Mesh: {fileID: 4300000, guid: 7946a575865a8b145879799ee33d3673, type: 3}
+--- !u!114 &505058350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 505058343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: defb3335ea83d194cbc72edd9aacea73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tabThatWillBeParent: {fileID: 1177614508}
 --- !u!1 &576344423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,7 +1244,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 43f32b528ca71bc41afed69cfe6c5a1a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1379,6 +1407,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivityX: 10
+  leftBoundaryOffset: 2.62
+  rightBoundaryOffset: 2.35
 --- !u!1001 &856725632
 Prefab:
   m_ObjectHideFlags: 0
@@ -1793,7 +1823,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 43f32b528ca71bc41afed69cfe6c5a1a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1956,6 +1986,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivityX: 10
+  leftBoundaryOffset: 0.06
+  rightBoundaryOffset: 4.39
 --- !u!1 &1260416608
 GameObject:
   m_ObjectHideFlags: 0
@@ -2267,7 +2299,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 43f32b528ca71bc41afed69cfe6c5a1a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2430,6 +2462,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivityX: 10
+  leftBoundaryOffset: 0.76
+  rightBoundaryOffset: 3.52
 --- !u!1 &1602162188
 GameObject:
   m_ObjectHideFlags: 0
@@ -2918,6 +2952,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivityX: 10
+  leftBoundaryOffset: 4
+  rightBoundaryOffset: 2
 --- !u!64 &1935973313
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2932,6 +2968,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 85204e873894798448d825bd5b0e90ef, type: 3}
+--- !u!114 &1935973317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1935973310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: defb3335ea83d194cbc72edd9aacea73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tabThatWillBeParent: {fileID: 1571932813}
 --- !u!1 &1946084233
 GameObject:
   m_ObjectHideFlags: 0
