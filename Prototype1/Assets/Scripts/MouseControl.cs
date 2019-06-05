@@ -6,7 +6,7 @@ public class MouseControl : MonoBehaviour
 {
 
     // Mouse Control Variabbles
-    [SerializeField] private float mouseSensitivityX = 1;
+    [SerializeField] private float mouseSensitivityX = 10;
 
     private bool selected = false;
 
