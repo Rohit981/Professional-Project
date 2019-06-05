@@ -1407,8 +1407,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivityX: 10
-  leftBoundaryOffset: 2.62
-  rightBoundaryOffset: 2.35
+  leftBoundaryOffset: 2.56
+  rightBoundaryOffset: 2
 --- !u!1001 &856725632
 Prefab:
   m_ObjectHideFlags: 0
@@ -1986,8 +1986,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivityX: 10
-  leftBoundaryOffset: 0.06
-  rightBoundaryOffset: 4.39
+  leftBoundaryOffset: 4
+  rightBoundaryOffset: 2
 --- !u!1 &1260416608
 GameObject:
   m_ObjectHideFlags: 0
@@ -2462,8 +2462,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivityX: 10
-  leftBoundaryOffset: 0.76
-  rightBoundaryOffset: 3.52
+  leftBoundaryOffset: 4
+  rightBoundaryOffset: 2
 --- !u!1 &1602162188
 GameObject:
   m_ObjectHideFlags: 0
