@@ -11,12 +11,15 @@ public class MakeChildofTabAfterAnimation : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        tabThatWillBeParent.transform.DetachChildren();
+        print("Reset");
     }
 	
 	// Update is called once per frame
 	void Update () {
-		if (!hasParented)
+
+     
+        
+        if (!hasParented)
         {
             if (Time.time > 1.2f)
             {
