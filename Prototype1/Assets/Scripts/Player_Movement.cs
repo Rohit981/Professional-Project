@@ -18,7 +18,7 @@ public class Player_Movement : MonoBehaviour
     {
         movementActivated = false;
         rb = GetComponent<Rigidbody>();
-       
+
     }
 
     // Use this for physics related code
@@ -40,6 +40,28 @@ public class Player_Movement : MonoBehaviour
 
 
         if (Input.GetKeyDown("r"))
+        {
+            //  DestroyAll();
             SceneManager.LoadScene(scene.name); ;
+        }
+
     }
+
+            /* Attempt to resolve animation skew on level reset
+
+            private void DestroyAll()
+            {
+                Debug.Log("KillAll");
+                GameObject[] GameObjects = (FindObjectsOfType<GameObject>() as GameObject[]);
+
+                for (int i = 0; i < GameObjects.Length; i++)
+                {
+                    Destroy(GameObjects[i]);
+                }
+            }
+
+            */
+
 }
+    
+

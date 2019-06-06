@@ -23,9 +23,11 @@ public class RestartLevel : MonoBehaviour {
     {
         if (other.tag == "Killer")
         {
+            
             Debug.Log("player hit Restart Point");
-            Scene scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name); ;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
+
+   
 }
