@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Movement : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class Player_Movement : MonoBehaviour
     {
         movementActivated = false;
         rb = GetComponent<Rigidbody>();
+       
     }
 
     // Use this for physics related code
@@ -32,7 +34,12 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Scene scene = SceneManager.GetActiveScene();
         if (Input.GetKeyDown("m"))
             movementActivated = true;
+
+
+        if (Input.GetKeyDown("r"))
+            SceneManager.LoadScene(scene.name); ;
     }
 }

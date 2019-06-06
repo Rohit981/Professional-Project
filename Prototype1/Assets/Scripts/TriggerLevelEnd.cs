@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TriggerLevelEnd : MonoBehaviour
 {
@@ -17,15 +18,16 @@ public class TriggerLevelEnd : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "EndGoal")
+        if (other.tag == "Player")
         {
             player.GetComponent<Animator>().SetBool("ReachedEnd", true);
             Debug.Log("player hit end");
+            SceneManager.LoadScene("Digital_Prototype--LVL2"); ;
         }
     }
 }
