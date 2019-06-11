@@ -58,7 +58,7 @@ public class Player_Movement : MonoBehaviour
                     counter++;
 
                     gameObject.transform.parent = null;
-                    Debug.Log("Detaching");
+                   print("Detaching");
                 } while (counter<=numberofTotalObjects);
                    
             }
