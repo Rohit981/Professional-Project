@@ -793,7 +793,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: c912e0373accee841ae260ce991c4dd8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.1648765
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c912e0373accee841ae260ce991c4dd8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -844,7 +844,6 @@ GameObject:
   - component: {fileID: 383000278}
   - component: {fileID: 383000279}
   - component: {fileID: 383000280}
-  - component: {fileID: 383000281}
   m_Layer: 0
   m_Name: EndGoal
   m_TagString: EndGoal
@@ -889,21 +888,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 651164151}
---- !u!54 &383000281
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 383000277}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &395846374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,6 +1094,23 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 018c7a1135704b34ab99e713e10212ec, type: 3}
+--- !u!1 &666239480 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1111300141053236, guid: 8a5e4ffd18318224ca6a97c0c961eecb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1576221923}
+--- !u!65 &666239482
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 666239480}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &708157782
 GameObject:
   m_ObjectHideFlags: 0
@@ -2822,6 +2823,15 @@ Prefab:
         type: 2}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 65831274351019730, guid: 8a5e4ffd18318224ca6a97c0c961eecb,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1111300141053236, guid: 8a5e4ffd18318224ca6a97c0c961eecb, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a5e4ffd18318224ca6a97c0c961eecb, type: 2}
