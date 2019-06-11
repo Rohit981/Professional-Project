@@ -18,32 +18,59 @@ public class MouseControl : MonoBehaviour
     private bool selected = false;
     private bool soundIsPlaying = false;
 
+
     // Use this for initialization
     void Start()
     {
         GetComponent<AudioSource>().enabled = true;
         leftBoundaryX = gameObject.transform.position.x + leftBoundaryOffset;
         rightBoundaryX = gameObject.transform.position.x - rightBoundaryOffset;
+
+
+        AimLeftGizmo();
+        AimRightGizmo();
     }
+
+
+    private Vector3 leftLineStart;
+    private Vector3 leftLineTarget;
+    private Vector3 rightLineStart;
+    private Vector3 rightLineTarget;
+
+    private void AimLeftGizmo()
+    {
+        leftLineStart = gameObject.transform.position;
+        leftLineStart.x = gameObject.transform.position.x + leftBoundaryOffset;
+        leftLineTarget = leftLineStart;
+        leftLineTarget.y = 20;
+    }
+
+    private void AimRightGizmo()
+    {
+        rightLineStart = gameObject.transform.position;
+        rightLineStart.x = gameObject.transform.position.x - rightBoundaryOffset;
+        rightLineTarget = leftLineStart;
+        rightLineTarget.y = 20;
+    }
+
 
     void OnDrawGizmosSelected()
     {
-
         // Draws a vertical red line on the left boundary
-        Vector3 lineStart = gameObject.transform.position;
-        lineStart.x = gameObject.transform.position.x + leftBoundaryOffset;
-        Vector3 lineTarget = lineStart;
-        lineTarget.y = 20;
+        if (!Application.isPlaying)
+        {
+            AimLeftGizmo();
+        }
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(lineStart, lineTarget);
+        Gizmos.DrawLine(leftLineStart, leftLineTarget);
 
         // Draws a vertical blue line on the right boundary
-        lineStart = gameObject.transform.position;
-        lineStart.x = gameObject.transform.position.x - rightBoundaryOffset;
-        lineTarget = lineStart;
-        lineTarget.y = 20;
+        if (!Application.isPlaying)
+        {
+            AimRightGizmo();
+        }
         Gizmos.color = Color.blue;
-        Gizmos.DrawLine(lineStart, lineTarget);
+        Gizmos.DrawLine(rightLineStart, rightLineTarget);
     }
 
     // Update is called once per frame
