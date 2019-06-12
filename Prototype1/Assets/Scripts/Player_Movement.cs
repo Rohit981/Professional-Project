@@ -31,7 +31,7 @@ public class Player_Movement : MonoBehaviour
         if (movementActivated)
         {
             if (rb.velocity.magnitude <= maxSpeed)
-                rb.AddForce(new Vector3(-1, 0, 0) * acceleration);
+                rb.AddForce(new Vector3(1, 0, 0) * acceleration);
         }
     }
 
