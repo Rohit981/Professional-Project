@@ -7,6 +7,9 @@ TagManager:
   - Shadow
   - EndGoal
   - Killer
+  - JumpObject
+  - Slow
+  - Ramp
   layers:
   - Default
   - TransparentFX
