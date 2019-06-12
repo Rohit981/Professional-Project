@@ -7,8 +7,8 @@ public class Jump_Mechanic : MonoBehaviour {
     [SerializeField] [Tooltip("Set this value to be equal to the int value of the layer 'Player'")]
     int playerLayer;
 
-    [SerializeField]
-    private float jumpStrenght = 0.5f;
+  
+    bool hasAlreadyJumped = false;
 
     // Use this for initialization
     void Start ()
@@ -19,14 +19,24 @@ public class Jump_Mechanic : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		
+        DestroyCollider();
 	}
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == playerLayer)
+       
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        hasAlreadyJumped = true;
+    }
+
+    void DestroyCollider()
+    {
+        if(hasAlreadyJumped == true)
         {
-            other.GetComponent<Rigidbody>().AddForce(Vector3.up * jumpStrenght, ForceMode.Impulse);
+            Destroy(this);
         }
     }
 }
