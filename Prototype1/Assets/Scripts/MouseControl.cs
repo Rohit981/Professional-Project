@@ -7,7 +7,7 @@ public class MouseControl : MonoBehaviour
 
     // ------------------------------- ALL THE X VALUES ARE INVERTED BECAUSE THAT'S THE WAY THE SCENE WAS BUILT! GOING TO THE RIGHT DECREASES THE X!
 
-    // Mouse Control Variabbles
+    // Mouse Control Variables
     [SerializeField] private float mouseSensitivityX = 10;
     [SerializeField] private float leftBoundaryOffset = 4;
     [SerializeField] private float rightBoundaryOffset = 2;
