@@ -758,6 +758,11 @@ Prefab:
     - {fileID: 3300004, guid: 769187f6a690bcb4481dd3a446a1d347, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: 769187f6a690bcb4481dd3a446a1d347, type: 3}
   m_IsPrefabParent: 0
+--- !u!95 &714141117 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 9500000, guid: 769187f6a690bcb4481dd3a446a1d347,
+    type: 3}
+  m_PrefabInternal: {fileID: 714141116}
 --- !u!4 &715461359 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400006, guid: 769187f6a690bcb4481dd3a446a1d347, type: 3}
@@ -1263,6 +1268,7 @@ GameObject:
   - component: {fileID: 1412149698}
   - component: {fileID: 1412149697}
   - component: {fileID: 1412149696}
+  - component: {fileID: 1412149700}
   m_Layer: 0
   m_Name: Tab (2)
   m_TagString: Untagged
@@ -1337,6 +1343,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1412149700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1412149695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slideDirection: 0
+  mouseSensitivity: 10
+  limitOffset1: 1.29
+  limitOffset2: 1.47
+  popUpAnimator: {fileID: 2132778398}
+  shadowAnimator: {fileID: 714141117}
+  animationName: Charge_Knight
+  animationSpeed: 0.2
 --- !u!1 &1412395986 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: 769187f6a690bcb4481dd3a446a1d347, type: 3}
@@ -1770,6 +1795,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 769187f6a690bcb4481dd3a446a1d347, type: 3}
   m_IsPrefabParent: 0
+--- !u!95 &2132778398 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 9500000, guid: 769187f6a690bcb4481dd3a446a1d347,
+    type: 3}
+  m_PrefabInternal: {fileID: 2132778397}
 --- !u!1 &2133488244
 GameObject:
   m_ObjectHideFlags: 0
