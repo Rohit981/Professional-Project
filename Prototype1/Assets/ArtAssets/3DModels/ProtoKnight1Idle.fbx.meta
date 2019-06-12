@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 769187f6a690bcb4481dd3a446a1d347
+guid: 967bc2fec97875649a712b82f8f88102
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -22,7 +22,7 @@ ModelImporter:
     4300000: Body
     4300002: Arm
     4300004: Horse
-    7400000: Knight_Charge
+    7400000: IDLE
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -35,7 +35,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: 
+    motionNodeName: <Root Transform>
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
@@ -53,10 +53,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Knight_Charge
+      name: IDLE
       takeName: Take 001
-      firstFrame: 0
-      lastFrame: 60
+      firstFrame: 10
+      lastFrame: 10
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -83,7 +83,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.3
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
