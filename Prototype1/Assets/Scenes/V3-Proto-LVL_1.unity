@@ -719,8 +719,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 436004536}
-  m_LocalRotation: {x: 0.17007531, y: -0.032513645, z: 0.005614742, w: 0.98487854}
-  m_LocalPosition: {x: 4.484085, y: 4.674323, z: -11.373088}
+  m_LocalRotation: {x: -0.22441941, y: 0.35008675, z: -0.0867861, w: -0.9052864}
+  m_LocalPosition: {x: 9.213625, y: 4.6847944, z: -8.246697}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -957,7 +957,9 @@ GameObject:
   - component: {fileID: 825608646}
   - component: {fileID: 825608645}
   - component: {fileID: 825608644}
+  - component: {fileID: 825608649}
   - component: {fileID: 825608648}
+  - component: {fileID: 825608650}
   m_Layer: 0
   m_Name: Tab (1)
   m_TagString: Untagged
@@ -1038,19 +1040,43 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 825608643}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slideDirection: 1
-  mouseSensitivity: 10
-  limitOffset1: 0.93
-  limitOffset2: 0.69
   popUpAnimator: {fileID: 261972478}
   shadowAnimator: {fileID: 564469137}
   animationName: Knight_Charge
   animationSpeed: 0.2
+--- !u!114 &825608649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 825608643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e15bac10fab334ea7ce1e7c6a7337a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slideDirection: 1
+  mouseSensitivity: 10
+  limitOffset1: 2
+  limitOffset2: 2
+--- !u!114 &825608650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 825608643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bff37395e95c20f48a87016a8418cfdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transformThatWillBeMoved: {fileID: 1468891296}
+  movementSpeed: 0.2
 --- !u!1 &863285869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,7 +1409,9 @@ GameObject:
   - component: {fileID: 1412149698}
   - component: {fileID: 1412149697}
   - component: {fileID: 1412149696}
+  - component: {fileID: 1412149701}
   - component: {fileID: 1412149700}
+  - component: {fileID: 1412149702}
   m_Layer: 0
   m_Name: Tab (2)
   m_TagString: Untagged
@@ -1469,14 +1497,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slideDirection: 0
-  mouseSensitivity: 10
-  limitOffset1: 0.62
-  limitOffset2: 1.1
   popUpAnimator: {fileID: 2132778398}
   shadowAnimator: {fileID: 1065761910}
   animationName: Knight_Charge
   animationSpeed: 0.2
+--- !u!114 &1412149701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1412149695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e15bac10fab334ea7ce1e7c6a7337a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slideDirection: 0
+  mouseSensitivity: 10
+  limitOffset1: 2
+  limitOffset2: 2
+--- !u!114 &1412149702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1412149695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bff37395e95c20f48a87016a8418cfdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transformThatWillBeMoved: {fileID: 2133488245}
+  movementSpeed: 1.36
 --- !u!1 &1412395986 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: 769187f6a690bcb4481dd3a446a1d347, type: 3}
