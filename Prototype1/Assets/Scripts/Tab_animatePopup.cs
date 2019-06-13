@@ -9,6 +9,7 @@ public class Tab_animatePopup : MonoBehaviour
 
     [Header("Tab settings")]
     [SerializeField] private TabSlideDirection slideDirection;
+    [Tooltip("How fast the tab moves relative to mouse movement")]
     [SerializeField] private float mouseSensitivity = 10;
     [SerializeField] private float limitOffset1 = 2;
     [SerializeField] private float limitOffset2 = 2;
@@ -17,6 +18,7 @@ public class Tab_animatePopup : MonoBehaviour
     [SerializeField] private Animator popUpAnimator;
     [SerializeField] private Animator shadowAnimator;
     [SerializeField] private string animationName;
+    [Tooltip("How fast the animation plays relative to mouse movement")]
     [SerializeField] private float animationSpeed = 0.2f;
 
     private bool selected = false;
