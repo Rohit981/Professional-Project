@@ -1240,11 +1240,6 @@ MonoBehaviour:
   jumpStrength: 1.5
   RampSpeed: 5
   SlowDownSpeed: 0.01
---- !u!95 &1065761910 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 9500000, guid: 769187f6a690bcb4481dd3a446a1d347,
-    type: 3}
-  m_PrefabInternal: {fileID: 714141116}
 --- !u!1 &1083739745 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100004, guid: 769187f6a690bcb4481dd3a446a1d347, type: 3}
@@ -1409,9 +1404,8 @@ GameObject:
   - component: {fileID: 1412149698}
   - component: {fileID: 1412149697}
   - component: {fileID: 1412149696}
-  - component: {fileID: 1412149701}
   - component: {fileID: 1412149700}
-  - component: {fileID: 1412149702}
+  - component: {fileID: 1412149701}
   m_Layer: 0
   m_Name: Tab (2)
   m_TagString: Untagged
@@ -1494,29 +1488,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1412149695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popUpAnimator: {fileID: 2132778398}
-  shadowAnimator: {fileID: 1065761910}
-  animationName: Knight_Charge
-  animationSpeed: 0.2
---- !u!114 &1412149701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1412149695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18e15bac10fab334ea7ce1e7c6a7337a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slideDirection: 0
   mouseSensitivity: 10
-  limitOffset1: 2
-  limitOffset2: 2
---- !u!114 &1412149702
+  limitOffset1: 0.81
+  limitOffset2: 0.64
+--- !u!114 &1412149701
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1528,7 +1507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transformThatWillBeMoved: {fileID: 2133488245}
-  movementSpeed: 1.36
+  movementSpeed: 1
 --- !u!1 &1412395986 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: 769187f6a690bcb4481dd3a446a1d347, type: 3}
@@ -2078,11 +2057,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 769187f6a690bcb4481dd3a446a1d347, type: 3}
   m_IsPrefabParent: 0
---- !u!95 &2132778398 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 9500000, guid: 769187f6a690bcb4481dd3a446a1d347,
-    type: 3}
-  m_PrefabInternal: {fileID: 2132778397}
 --- !u!1 &2133488244
 GameObject:
   m_ObjectHideFlags: 0
