@@ -37,7 +37,22 @@ ModelImporter:
     2300000: Carriage1
     3300000: Carriage1
     4300000: Carriage1
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carriage_Glass
+    second: {fileID: 2100000, guid: 36abc7c2c30e9c34eb58766c34c2fe7c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carriage_Horses
+    second: {fileID: 2100000, guid: d5f520c828d55184d8a7c0f0c2c5e2e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carriage_Wood
+    second: {fileID: 2100000, guid: 903bfc96174f19b42bc77f9599b49638, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
