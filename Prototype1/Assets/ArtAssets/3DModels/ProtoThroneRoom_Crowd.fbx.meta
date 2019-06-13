@@ -20,7 +20,7 @@ ModelImporter:
     3300002: Pue
     4300000: Pue
     4300002: People
-    7400000: Bow
+    7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -51,7 +51,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Bow
+      name: Take 001
       takeName: Take 001
       firstFrame: 0
       lastFrame: 60
@@ -61,7 +61,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
