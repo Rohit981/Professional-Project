@@ -9,6 +9,7 @@ public class Tab_animatePopup : MonoBehaviour
 
     [Header("Tab settings")]
     [SerializeField] private TabSlideDirection slideDirection;
+    [Tooltip("How fast the tab moves relative to mouse movement")]
     [SerializeField] private float mouseSensitivity = 10;
     [SerializeField] private float limitOffset1 = 2;
     [SerializeField] private float limitOffset2 = 2;
@@ -17,6 +18,7 @@ public class Tab_animatePopup : MonoBehaviour
     [SerializeField] private Animator popUpAnimator;
     [SerializeField] private Animator shadowAnimator;
     [SerializeField] private string animationName;
+    [Tooltip("How fast the animation plays relative to mouse movement")]
     [SerializeField] private float animationSpeed = 0.2f;
 
     private bool selected = false;
@@ -77,6 +79,13 @@ public class Tab_animatePopup : MonoBehaviour
         updateGizmosPositions();
     }
 
+    private void playAnimations(float mouseMovement)
+    {
+        // modify animation's time value based on how much mouse has moved
+        popUpAnimator.Play(animationName, 0, popUpAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime + (mouseMovement * animationSpeed));
+        shadowAnimator.Play(animationName, 0, popUpAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime + (mouseMovement * animationSpeed));
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -99,29 +108,24 @@ public class Tab_animatePopup : MonoBehaviour
                     {
                         // add left right mouse movement to the X value of the object's transform
                         transform.position += new Vector3(mouseMovement, 0, 0);
+                        playAnimations(mouseMovement);
                     }
                     break;
 
                 case TabSlideDirection.Vertical:
                     mouseMovement = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
                     // if tab is not going beyond boundaries
-                    if (mouseMovement > 0 && transform.position.z <= limit1.z
+                    if (mouseMovement > 0 && transform.position.z <= limit2.z
                         ||
-                        mouseMovement < 0 && transform.position.z >= limit2.z)
+                        mouseMovement < 0 && transform.position.z >= limit1.z)
                     {
                         // add up down mouse movement to the Z value of the object's transform
                         transform.position += new Vector3(0, 0, mouseMovement);
+                        playAnimations(mouseMovement);
                     }
                     break;
             }
-
-            // if mouse was actually moved
-            if (mouseMovement > 0)
-            {
-                // modify animation's time value based on how much mouse has moved
-                popUpAnimator.Play(animationName, 0, popUpAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime + (mouseMovement * animationSpeed));
-                shadowAnimator.Play(animationName, 0, popUpAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime + (mouseMovement * animationSpeed));
-            }
+            
 
 
         }
