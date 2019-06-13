@@ -7,7 +7,7 @@ public class Tab_movePopup : MonoBehaviour
 
     // Inspector
     [Header("Movement settings")]
-    [Tooltip("You need to drag the parent popUp in here so that both the popup and the shadow")]
+    [Tooltip("You need to drag the parent popUp in here so that both the popup and the shadow will move")]
     [SerializeField] private Transform transformThatWillBeMoved;
     [Tooltip("How fast the popup moves relative to tab movement")]
     [SerializeField] private float movementSpeed = 1.0f;
