@@ -26,12 +26,14 @@ public class Player_Movement : MonoBehaviour
     [SerializeField]
     float SlowDownSpeed;
 
+    Animator anim;
+
     // Use this for initialization
     void Start()
     {
         movementActivated = false;
         rb = GetComponent<Rigidbody>();
-        
+        anim = GetComponent<Animator>();
 
     }
 
@@ -55,8 +57,11 @@ public class Player_Movement : MonoBehaviour
 
         Scene scene = SceneManager.GetActiveScene();
         if (Input.GetKeyDown("m"))
+        {
             movementActivated = true;
+        anim.SetBool("isWalking", true);
 
+        }
 
         if (Input.GetKeyDown("r"))
         {
@@ -106,8 +111,16 @@ public class Player_Movement : MonoBehaviour
         if (other.gameObject.tag == "JumpObject")
         {
             rb.AddForce(Vector3.up * jumpStrength, ForceMode.Impulse);
+            anim.SetBool("isJumping", true);
+
             print("Jumped");
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+            anim.SetBool("isJumping", false);
+
     }
 
     //private void OnCollisionExit(Collision collision)

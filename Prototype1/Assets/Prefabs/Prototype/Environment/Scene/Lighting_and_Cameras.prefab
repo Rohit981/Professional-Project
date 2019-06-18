@@ -68,7 +68,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4744859695393094}
-  - component: {fileID: 108509486461942522}
+  - component: {fileID: 108004279914174152}
   m_Layer: 0
   m_Name: Ambient_Light
   m_TagString: Untagged
@@ -98,13 +98,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1966074606759190}
-  m_LocalRotation: {x: 0.47796887, y: -0.8397482, z: 0.16822729, w: 0.1951111}
-  m_LocalPosition: {x: 0, y: 8, z: 0}
+  m_LocalRotation: {x: 0.45765764, y: -0.45825905, z: -0.21749704, w: 0.73023504}
+  m_LocalPosition: {x: 0, y: 8, z: -7.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4520002883808654}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 27.973001, y: -169.10901, z: -56.575005}
+  m_LocalEulerAnglesHint: {x: 27.973001, y: -79.49, z: -56.575005}
 --- !u!4 &4749322077643922
 Transform:
   m_ObjectHideFlags: 1
@@ -125,7 +125,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1257836834137402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7, z: 0}
+  m_LocalPosition: {x: 3.59, y: 1.05, z: -15.74}
   m_LocalScale: {x: 1.0000005, y: 1.0000002, z: 1.0000002}
   m_Children: []
   m_Father: {fileID: 4520002883808654}
@@ -174,7 +174,7 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1878500512236178}
   m_Enabled: 1
---- !u!108 &108509486461942522
+--- !u!108 &108004279914174152
 Light:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -183,8 +183,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.5
+  m_Color: {r: 0.9716981, g: 0.9691687, b: 0.8479441, a: 1}
+  m_Intensity: 1.21
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -219,9 +219,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.4
-  m_Range: 10
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 22.15
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
