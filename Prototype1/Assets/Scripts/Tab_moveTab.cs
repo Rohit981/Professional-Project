@@ -17,7 +17,7 @@ public class Tab_moveTab : MonoBehaviour
     [Tooltip("How fast the tab moves relative to mouse movement.")]
     [SerializeField] private float mouseSensitivity = 10;
     [Tooltip("How fast the tab lerps to its final position. Anything beyond 0.3 is probably going to be too fast for the human eye to notice.")]
-    [SerializeField, Range(0, 0.5f)] private float lerpSpeed = 0.15f;
+    [SerializeField, Range(0.01f, 0.5f)] private float lerpSpeed = 0.15f;
 
     private bool selected = false;
     
