@@ -1,15 +1,27 @@
 fileFormatVersion: 2
-guid: 1757a102e74eb3e4098f0f02d92feeaa
+guid: 67b4bb86dd0cf3b438d21ac4ee1d8b15
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: pCube2
+    100004: pCube6
+    100006: pCube7
     400000: //RootNode
-    2100000: Book_Pages
-    2100002: Book_Cover
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: ProtoBook
+    400002: pCube2
+    400004: pCube6
+    400006: pCube7
+    2100000: lambert1
+    2300000: pCube6
+    2300002: pCube7
+    3300000: pCube6
+    3300002: pCube7
+    4300000: pCube2
+    4300002: pCube6
+    4300004: pCube7
+    7400000: Fold
+    9500000: //RootNode
+    13700000: pCube2
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -37,7 +49,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Fold
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 36
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -85,7 +125,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
