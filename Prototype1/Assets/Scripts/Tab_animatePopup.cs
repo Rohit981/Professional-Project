@@ -7,23 +7,20 @@ public class Tab_animatePopup : MonoBehaviour
 
     // Inspector
     [Header("Animation settings")]
-    [SerializeField] private Animator popUpAnimator;
-    [SerializeField] private Animator shadowAnimator;
-    [SerializeField] private string animationName;
+    [SerializeField] private List<Animator> popUpAnimators;
     [Tooltip("How fast the animation plays relative to tab movement")]
     [SerializeField] private float animationSpeed = 0.2f;
 
     // Will store slideDirection value found in moveTab script
-    TabSlideDirection slideDirection = TabSlideDirection.Horizontal;
+    private TabSlideDirection slideDirection = TabSlideDirection.Horizontal;
 
     // Stores last position and current position so we can calculate how much tab has moved since last frame
-    Vector3 lastPosition;
-    Vector3 currentPosition;
+    private Vector3 lastPosition;
+    private Vector3 currentPosition;
 
     private void Start()
     {
-        Tab_moveTab moveTabScript = gameObject.GetComponent<Tab_moveTab>();
-        slideDirection = moveTabScript.slideDirection;
+        slideDirection = gameObject.GetComponent<Tab_moveTab>().slideDirection;
         currentPosition = transform.position;
         lastPosition = currentPosition;
     }
@@ -31,8 +28,10 @@ public class Tab_animatePopup : MonoBehaviour
     // modify animation's time value based on how much mouse has moved
     private void playAnimations(float tabMovement)
     {
-        popUpAnimator.Play(animationName, 0, popUpAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime + (tabMovement * animationSpeed));
-        shadowAnimator.Play(animationName, 0, popUpAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime + (tabMovement * animationSpeed));
+        foreach (Animator anim in popUpAnimators)
+        {
+            anim.Play(0, 0, anim.GetCurrentAnimatorStateInfo(0).normalizedTime + (tabMovement * animationSpeed));
+        }
     }
 
     // Update is called once per frame
