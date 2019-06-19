@@ -330,11 +330,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4972912952347376, guid: 2909036e0db405e49869a1bf04e9e1f8,
     type: 2}
   m_PrefabInternal: {fileID: 442317086}
---- !u!95 &273394867 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95729830699658852, guid: 2909036e0db405e49869a1bf04e9e1f8,
-    type: 2}
-  m_PrefabInternal: {fileID: 442317086}
 --- !u!1 &288605580 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1866577334000758, guid: 505390f401821074dabed9903d412548,
@@ -351,9 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpAnimator: {fileID: 426849965}
-  shadowAnimator: {fileID: 426849965}
-  animationName: Crown
+  popUpAnimators: []
   animationSpeed: 0.2
 --- !u!114 &288605582
 MonoBehaviour:
@@ -367,9 +360,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slideDirection: 0
-  mouseSensitivity: 10
   limitOffset1: 0
   limitOffset2: 2.13
+  mouseSensitivity: 10
+  lerpSpeed: 0.15
 --- !u!95 &426849965 stripped
 Animator:
   m_PrefabParentObject: {fileID: 95956818250382756, guid: 54dd7d7c7ebda984bbb9e5f233d95bd3,
@@ -422,19 +416,9 @@ Transform:
   m_PrefabParentObject: {fileID: 4972912952347376, guid: 2909036e0db405e49869a1bf04e9e1f8,
     type: 2}
   m_PrefabInternal: {fileID: 745329235}
---- !u!95 &490339173 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95729830699658852, guid: 2909036e0db405e49869a1bf04e9e1f8,
-    type: 2}
-  m_PrefabInternal: {fileID: 745329235}
 --- !u!4 &569002295 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4972912952347376, guid: 2909036e0db405e49869a1bf04e9e1f8,
-    type: 2}
-  m_PrefabInternal: {fileID: 192257572}
---- !u!95 &569002296 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95729830699658852, guid: 2909036e0db405e49869a1bf04e9e1f8,
     type: 2}
   m_PrefabInternal: {fileID: 192257572}
 --- !u!1001 &621128403
@@ -661,11 +645,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4972912952347376, guid: 2909036e0db405e49869a1bf04e9e1f8,
     type: 2}
   m_PrefabInternal: {fileID: 2057448421}
---- !u!95 &877928443 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95729830699658852, guid: 2909036e0db405e49869a1bf04e9e1f8,
-    type: 2}
-  m_PrefabInternal: {fileID: 2057448421}
 --- !u!1001 &1042466147
 Prefab:
   m_ObjectHideFlags: 0
@@ -711,11 +690,6 @@ Prefab:
 --- !u!4 &1064398953 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4972912952347376, guid: 2909036e0db405e49869a1bf04e9e1f8,
-    type: 2}
-  m_PrefabInternal: {fileID: 621128403}
---- !u!95 &1064398954 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95729830699658852, guid: 2909036e0db405e49869a1bf04e9e1f8,
     type: 2}
   m_PrefabInternal: {fileID: 621128403}
 --- !u!1 &1200086585
@@ -1092,9 +1066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpAnimator: {fileID: 273394867}
-  shadowAnimator: {fileID: 273394867}
-  animationName: Bow
+  popUpAnimators: []
   animationSpeed: -0.5
 --- !u!114 &1424217647
 MonoBehaviour:
@@ -1108,9 +1080,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slideDirection: 1
-  mouseSensitivity: 10
   limitOffset1: 1.01
   limitOffset2: 0.04
+  mouseSensitivity: 10
+  lerpSpeed: 0.15
 --- !u!114 &1424217652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1122,9 +1095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpAnimator: {fileID: 490339173}
-  shadowAnimator: {fileID: 490339173}
-  animationName: Bow
+  popUpAnimators: []
   animationSpeed: -0.5
 --- !u!114 &1424217653
 MonoBehaviour:
@@ -1137,9 +1108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpAnimator: {fileID: 569002296}
-  shadowAnimator: {fileID: 569002296}
-  animationName: Bow
+  popUpAnimators: []
   animationSpeed: -0.5
 --- !u!114 &1424217654
 MonoBehaviour:
@@ -1152,9 +1121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpAnimator: {fileID: 1064398954}
-  shadowAnimator: {fileID: 1064398954}
-  animationName: Bow
+  popUpAnimators: []
   animationSpeed: -0.5
 --- !u!114 &1424217655
 MonoBehaviour:
@@ -1167,9 +1134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpAnimator: {fileID: 877928443}
-  shadowAnimator: {fileID: 877928443}
-  animationName: Bow
+  popUpAnimators: []
   animationSpeed: -0.5
 --- !u!114 &1424217656
 MonoBehaviour:
@@ -1182,9 +1147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpAnimator: {fileID: 1804379346}
-  shadowAnimator: {fileID: 1804379346}
-  animationName: Bow
+  popUpAnimators: []
   animationSpeed: -0.5
 --- !u!1001 &1500096898
 Prefab:
@@ -1228,11 +1191,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da5305a58de306046b37cbbf1d98c951, type: 2}
   m_IsPrefabParent: 0
---- !u!95 &1604377567 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95858164564495810, guid: da5305a58de306046b37cbbf1d98c951,
-    type: 2}
-  m_PrefabInternal: {fileID: 1500096898}
 --- !u!1001 &1633327221
 Prefab:
   m_ObjectHideFlags: 0
@@ -1292,9 +1250,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slideDirection: 1
+  limitOffset1: -0.64
+  limitOffset2: 0.89
   mouseSensitivity: 10
-  limitOffset1: 0.51
-  limitOffset2: 0.01
+  lerpSpeed: 0.068
 --- !u!114 &1692564051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1306,9 +1265,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpAnimator: {fileID: 1604377567}
-  shadowAnimator: {fileID: 1604377567}
-  animationName: Chandelier_Lower
+  popUpAnimators:
+  - {fileID: 426849965}
   animationSpeed: 0.5
 --- !u!1001 &1768949068
 Prefab:
@@ -1359,11 +1317,6 @@ Prefab:
 --- !u!4 &1804379345 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4972912952347376, guid: 2909036e0db405e49869a1bf04e9e1f8,
-    type: 2}
-  m_PrefabInternal: {fileID: 815169704}
---- !u!95 &1804379346 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95729830699658852, guid: 2909036e0db405e49869a1bf04e9e1f8,
     type: 2}
   m_PrefabInternal: {fileID: 815169704}
 --- !u!1001 &1869092106
@@ -1549,9 +1502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpAnimator: {fileID: 0}
-  shadowAnimator: {fileID: 0}
-  animationName: Unfold
+  popUpAnimators: []
   animationSpeed: 0.5
 --- !u!114 &2025822355
 MonoBehaviour:
@@ -1564,9 +1515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpAnimator: {fileID: 0}
-  shadowAnimator: {fileID: 0}
-  animationName: Unfold
+  popUpAnimators: []
   animationSpeed: 0.5
 --- !u!114 &2025822356
 MonoBehaviour:
@@ -1579,9 +1528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpAnimator: {fileID: 0}
-  shadowAnimator: {fileID: 0}
-  animationName: Unfold
+  popUpAnimators: []
   animationSpeed: 0.5
 --- !u!114 &2025822357
 MonoBehaviour:
@@ -1594,9 +1541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpAnimator: {fileID: 0}
-  shadowAnimator: {fileID: 0}
-  animationName: Unfold
+  popUpAnimators: []
   animationSpeed: 0.5
 --- !u!114 &2025822358
 MonoBehaviour:
@@ -1609,9 +1554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpAnimator: {fileID: 0}
-  shadowAnimator: {fileID: 0}
-  animationName: Unfold
+  popUpAnimators: []
   animationSpeed: 0.5
 --- !u!114 &2025822359
 MonoBehaviour:
@@ -1624,9 +1567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpAnimator: {fileID: 0}
-  shadowAnimator: {fileID: 0}
-  animationName: Unfold
+  popUpAnimators: []
   animationSpeed: 0.5
 --- !u!114 &2025822360
 MonoBehaviour:
@@ -1639,9 +1580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpAnimator: {fileID: 0}
-  shadowAnimator: {fileID: 0}
-  animationName: Unfold
+  popUpAnimators: []
   animationSpeed: 0.5
 --- !u!114 &2025822361
 MonoBehaviour:
@@ -1654,9 +1593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpAnimator: {fileID: 0}
-  shadowAnimator: {fileID: 0}
-  animationName: Unfold
+  popUpAnimators: []
   animationSpeed: 0.5
 --- !u!114 &2025822362
 MonoBehaviour:
@@ -1670,9 +1607,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slideDirection: 1
+  limitOffset1: -1
+  limitOffset2: 1
   mouseSensitivity: 10
-  limitOffset1: 0.51
-  limitOffset2: 0.01
+  lerpSpeed: 0.15
 --- !u!1001 &2057448421
 Prefab:
   m_ObjectHideFlags: 0
