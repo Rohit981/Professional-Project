@@ -208,6 +208,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: popUpAnimators.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4191276267389788, guid: 505390f401821074dabed9903d412548, type: 2}
       propertyPath: m_LocalPosition.x
       value: 5.03
@@ -244,6 +248,49 @@ Prefab:
       propertyPath: m_Name
       value: Tab (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114529400454248674, guid: 505390f401821074dabed9903d412548,
+        type: 2}
+      propertyPath: slideDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114529400454248674, guid: 505390f401821074dabed9903d412548,
+        type: 2}
+      propertyPath: limitOffset1
+      value: -2.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 114529400454248674, guid: 505390f401821074dabed9903d412548,
+        type: 2}
+      propertyPath: limitOffset2
+      value: 1.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: popUpAnimators.Array.data[1]
+      value: 
+      objectReference: {fileID: 1761381037}
+    - target: {fileID: 0}
+      propertyPath: popUpAnimators.Array.data[2]
+      value: 
+      objectReference: {fileID: 1688025851}
+    - target: {fileID: 0}
+      propertyPath: popUpAnimators.Array.data[3]
+      value: 
+      objectReference: {fileID: 1814333334}
+    - target: {fileID: 0}
+      propertyPath: popUpAnimators.Array.data[4]
+      value: 
+      objectReference: {fileID: 2073109634}
+    - target: {fileID: 0}
+      propertyPath: popUpAnimators.Array.data[5]
+      value: 
+      objectReference: {fileID: 2117596659}
+    - target: {fileID: 0}
+      propertyPath: popUpAnimators.Array.data[6]
+      value: 
+      objectReference: {fileID: 701607600}
+    - target: {fileID: 0}
+      propertyPath: popUpAnimators.Array.data[0]
+      value: 
+      objectReference: {fileID: 701607600}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 505390f401821074dabed9903d412548, type: 2}
   m_IsPrefabParent: 0
@@ -409,6 +456,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: popUpAnimators.Array.data[0]
+      value: 
+      objectReference: {fileID: 426849965}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 505390f401821074dabed9903d412548, type: 2}
   m_IsPrefabParent: 0
@@ -417,41 +468,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4972912952347376, guid: 2909036e0db405e49869a1bf04e9e1f8,
     type: 2}
   m_PrefabInternal: {fileID: 442317086}
---- !u!1 &288605580 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1866577334000758, guid: 505390f401821074dabed9903d412548,
-    type: 2}
-  m_PrefabInternal: {fileID: 2126799084}
---- !u!114 &288605581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 288605580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popUpAnimators:
-  - {fileID: 426849965}
-  animationSpeed: 0.2
---- !u!114 &288605582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 288605580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18e15bac10fab334ea7ce1e7c6a7337a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slideDirection: 0
-  limitOffset1: 0
-  limitOffset2: 2.13
-  mouseSensitivity: 10
-  lerpSpeed: 0.151
 --- !u!95 &426849965 stripped
 Animator:
   m_PrefabParentObject: {fileID: 95956818250382756, guid: 54dd7d7c7ebda984bbb9e5f233d95bd3,
@@ -801,7 +817,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4424678268820622, guid: 18c5a3cdb300a0a4aa40961c1ca1c7c0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 6.71
+      value: 6.259
       objectReference: {fileID: 0}
     - target: {fileID: 4424678268820622, guid: 18c5a3cdb300a0a4aa40961c1ca1c7c0, type: 2}
       propertyPath: m_LocalPosition.y
@@ -836,7 +852,12 @@ Prefab:
       propertyPath: m_ProbeAnchor
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1322830519357532, guid: 18c5a3cdb300a0a4aa40961c1ca1c7c0, type: 2}
+      propertyPath: m_TagString
+      value: EndGoal
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114648640064054622, guid: 18c5a3cdb300a0a4aa40961c1ca1c7c0, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 18c5a3cdb300a0a4aa40961c1ca1c7c0, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1064398953 stripped
@@ -1074,41 +1095,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 68598001905760428, guid: da5305a58de306046b37cbbf1d98c951,
-        type: 2}
-      propertyPath: m_Points.Array.data[0].y
-      value: -2.0764592
-      objectReference: {fileID: 0}
-    - target: {fileID: 68598001905760428, guid: da5305a58de306046b37cbbf1d98c951,
-        type: 2}
-      propertyPath: m_Points.Array.data[0].x
-      value: -1.9992352
-      objectReference: {fileID: 0}
-    - target: {fileID: 68598001905760428, guid: da5305a58de306046b37cbbf1d98c951,
-        type: 2}
-      propertyPath: m_Points.Array.data[3].x
-      value: 1.9468908
-      objectReference: {fileID: 0}
-    - target: {fileID: 68598001905760428, guid: da5305a58de306046b37cbbf1d98c951,
-        type: 2}
-      propertyPath: m_Points.Array.data[3].y
-      value: -2.0652666
-      objectReference: {fileID: 0}
-    - target: {fileID: 68598001905760428, guid: da5305a58de306046b37cbbf1d98c951,
-        type: 2}
-      propertyPath: m_Points.Array.data[4].x
-      value: 1.8909535
-      objectReference: {fileID: 0}
-    - target: {fileID: 68598001905760428, guid: da5305a58de306046b37cbbf1d98c951,
-        type: 2}
-      propertyPath: m_Points.Array.data[4].y
-      value: -1.7016754
-      objectReference: {fileID: 0}
-    - target: {fileID: 68598001905760428, guid: da5305a58de306046b37cbbf1d98c951,
-        type: 2}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 345d2e43dec30f3478a43ed78edde8f7, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da5305a58de306046b37cbbf1d98c951, type: 2}
   m_IsPrefabParent: 0
@@ -1202,69 +1188,21 @@ Prefab:
     - target: {fileID: 114505373654746482, guid: f3ec9a99a2f9054478a3c5ba6705968a,
         type: 2}
       propertyPath: acceleration
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 114505373654746482, guid: f3ec9a99a2f9054478a3c5ba6705968a,
         type: 2}
       propertyPath: maxSpeed
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114505373654746482, guid: f3ec9a99a2f9054478a3c5ba6705968a,
+        type: 2}
+      propertyPath: pageAnim
+      value: 
+      objectReference: {fileID: 752531285}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f3ec9a99a2f9054478a3c5ba6705968a, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1424217645 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1866577334000758, guid: 505390f401821074dabed9903d412548,
-    type: 2}
-  m_PrefabInternal: {fileID: 221410292}
---- !u!114 &1424217646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1424217645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popUpAnimators: []
-  animationSpeed: -0.5
---- !u!114 &1424217647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1424217645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18e15bac10fab334ea7ce1e7c6a7337a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slideDirection: 1
-  limitOffset1: -1.4
-  limitOffset2: 1.36
-  mouseSensitivity: 10
-  lerpSpeed: 0.15
---- !u!114 &1424217655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1424217645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popUpAnimators:
-  - {fileID: 1761381037}
-  - {fileID: 1688025851}
-  - {fileID: 1814333334}
-  - {fileID: 2073109634}
-  - {fileID: 2117596659}
-  - {fileID: 701607600}
-  animationSpeed: -0.5
 --- !u!1001 &1633327221
 Prefab:
   m_ObjectHideFlags: 0
@@ -1437,13 +1375,12 @@ Prefab:
       propertyPath: m_Name
       value: Tab (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 65454983099537718, guid: 505390f401821074dabed9903d412548,
+    - target: {fileID: 114204223781967836, guid: 505390f401821074dabed9903d412548,
         type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114560825534426122, guid: 505390f401821074dabed9903d412548, type: 2}
+      propertyPath: popUpAnimators.Array.data[0]
+      value: 
+      objectReference: {fileID: 100694857}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 505390f401821074dabed9903d412548, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1804379345 stripped
@@ -1701,41 +1638,6 @@ EdgeCollider2D:
   - {x: 0.016926527, y: 4.6679015}
   - {x: 0.01364851, y: -0.014830589}
   - {x: -7.463101, y: 0.003344059}
---- !u!1 &2025822353 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1866577334000758, guid: 505390f401821074dabed9903d412548,
-    type: 2}
-  m_PrefabInternal: {fileID: 1768949068}
---- !u!114 &2025822358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2025822353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popUpAnimators:
-  - {fileID: 100694857}
-  animationSpeed: 0.5
---- !u!114 &2025822362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2025822353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18e15bac10fab334ea7ce1e7c6a7337a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slideDirection: 1
-  limitOffset1: -1
-  limitOffset2: 1
-  mouseSensitivity: 10
-  lerpSpeed: 0.15
 --- !u!1001 &2057448421
 Prefab:
   m_ObjectHideFlags: 0
@@ -1960,33 +1862,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114204223781967836, guid: 505390f401821074dabed9903d412548,
+        type: 2}
+      propertyPath: popUpAnimators.Array.data[0]
+      value: 
+      objectReference: {fileID: 426849965}
     - target: {fileID: 1866577334000758, guid: 505390f401821074dabed9903d412548, type: 2}
       propertyPath: m_Name
       value: Tab (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191276267389788, guid: 505390f401821074dabed9903d412548, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 65454983099537718, guid: 505390f401821074dabed9903d412548,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114529400454248674, guid: 505390f401821074dabed9903d412548,
-        type: 2}
-      propertyPath: slideDirection
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114529400454248674, guid: 505390f401821074dabed9903d412548,
-        type: 2}
-      propertyPath: limitOffset1
-      value: -2.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 114529400454248674, guid: 505390f401821074dabed9903d412548,
-        type: 2}
-      propertyPath: limitOffset2
-      value: 2.78
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 505390f401821074dabed9903d412548, type: 2}

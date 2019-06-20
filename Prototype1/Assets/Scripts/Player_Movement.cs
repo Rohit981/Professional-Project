@@ -10,8 +10,12 @@ public class Player_Movement : MonoBehaviour
     private bool movementActivated;
     bool hasAlreadyJumped = false;
 
-    [SerializeField] internal float maxSpeed = 3.0f;
-    [SerializeField] float acceleration = 9.0f;
+    [SerializeField]
+    internal float maxSpeed = 3.0f;
+
+    [SerializeField]
+    float acceleration = 9.0f;
+
     private bool allDetached = false;
     private int numberofTotalObjects = 0;
     int counter = 0;
@@ -27,6 +31,9 @@ public class Player_Movement : MonoBehaviour
     float SlowDownSpeed;
 
     Animator anim;
+
+    [SerializeField]
+    private Animator pageAnim;
 
     // Use this for initialization
     void Start()
@@ -115,6 +122,13 @@ public class Player_Movement : MonoBehaviour
             anim.SetBool("isJumping", true);
 
             print("Jumped");
+        }
+
+        if(collision.gameObject.tag == "EndGoal")
+        {
+            print("Reached End");
+            pageAnim.enabled = true;
+            this.gameObject.SetActive(false) ;
         }
     }
 
