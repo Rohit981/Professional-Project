@@ -23,6 +23,7 @@ public class Tab_animatePopup : MonoBehaviour
         slideDirection = gameObject.GetComponent<Tab_moveTab>().slideDirection;
         currentPosition = transform.position;
         lastPosition = currentPosition;
+       
     }
 
     // modify animation's time value based on how much mouse has moved

@@ -96,17 +96,17 @@ EdgeCollider2D:
   m_GameObject: {fileID: 1036166520113432}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c56808020a507e446870bccb8827cb55, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -1.611731, y: -1.8357921}
+  - {x: -1.9992352, y: -2.0764592}
   - {x: -1.0210428, y: -1.355648}
   - {x: 1.0120091, y: -1.3577738}
-  - {x: 1.6287174, y: -1.8203058}
+  - {x: 1.9468908, y: -2.0652666}
 --- !u!95 &95026315667374110
 Animator:
   serializedVersion: 3
