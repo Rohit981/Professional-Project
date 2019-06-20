@@ -169,7 +169,12 @@ ModelImporter:
     4300056: pPipe1
     4300058: pCube2
     4300060: pCube3
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 9f88477d83b33af43927d7f3b25c9d61, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
@@ -200,7 +205,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 30
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
