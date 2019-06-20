@@ -12,7 +12,6 @@ public class TriggerLevelEnd : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Debug.Log("console works");
     }
 
     // Update is called once per frame

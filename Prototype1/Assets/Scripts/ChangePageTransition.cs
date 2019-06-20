@@ -10,8 +10,7 @@ public class ChangePageTransition : MonoBehaviour {
     [SerializeField]
     private GameObject secondChapterPage;
 
-    [SerializeField]
-    private GameObject Audience;
+   
     // Use this for initialization
     void Start ()
     {
@@ -31,9 +30,5 @@ public class ChangePageTransition : MonoBehaviour {
         firstChapterPage.SetActive(false);
     }
 
-    void ChangeAudienceRotation()
-    {
-        Audience.transform.Rotate()
-    }
-
+   
 }
