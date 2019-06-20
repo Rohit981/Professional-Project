@@ -801,7 +801,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4424678268820622, guid: 18c5a3cdb300a0a4aa40961c1ca1c7c0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 6.71
+      value: 6.445
       objectReference: {fileID: 0}
     - target: {fileID: 4424678268820622, guid: 18c5a3cdb300a0a4aa40961c1ca1c7c0, type: 2}
       propertyPath: m_LocalPosition.y
@@ -835,6 +835,10 @@ Prefab:
         type: 2}
       propertyPath: m_ProbeAnchor
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322830519357532, guid: 18c5a3cdb300a0a4aa40961c1ca1c7c0, type: 2}
+      propertyPath: m_TagString
+      value: EndGoal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18c5a3cdb300a0a4aa40961c1ca1c7c0, type: 2}
@@ -1207,7 +1211,7 @@ Prefab:
     - target: {fileID: 114505373654746482, guid: f3ec9a99a2f9054478a3c5ba6705968a,
         type: 2}
       propertyPath: maxSpeed
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f3ec9a99a2f9054478a3c5ba6705968a, type: 2}
