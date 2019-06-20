@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Player_Movement : MonoBehaviour
 {
 
-    internal Rigidbody rb;
+    internal Rigidbody2D rb;
     private bool movementActivated;
     bool hasAlreadyJumped = false;
 
@@ -32,7 +32,7 @@ public class Player_Movement : MonoBehaviour
     void Start()
     {
         movementActivated = false;
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
     }
@@ -43,7 +43,10 @@ public class Player_Movement : MonoBehaviour
         if (movementActivated)
         {
             if (rb.velocity.magnitude <= maxSpeed)
-                rb.AddForce(new Vector3(1, 0, 0) * acceleration);
+            {
+                rb.AddForce(new Vector2(1, 0) * acceleration);
+
+            }
         }
     }
 
@@ -59,7 +62,7 @@ public class Player_Movement : MonoBehaviour
         if (Input.GetKeyDown("m"))
         {
             movementActivated = true;
-        anim.SetBool("isWalking", true);
+            anim.SetBool("isWalking", true);
 
         }
 
@@ -88,40 +91,39 @@ public class Player_Movement : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-
         if (collision.gameObject.tag == "Ramp")
         {
-            maxSpeed = RampSpeed; 
+            maxSpeed = RampSpeed;
         }
 
-        else if(collision.gameObject.tag == "Slow")
+        else if (collision.gameObject.tag == "Slow")
         {
             acceleration = 0;
-            maxSpeed = SlowDownSpeed;  
+            maxSpeed = SlowDownSpeed;
             print("Slow");
 
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.gameObject.tag == "JumpObject")
+        if (collision.gameObject.tag == "JumpObject")
         {
-            rb.AddForce(Vector3.up * jumpStrength, ForceMode.Impulse);
+            rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);
             anim.SetBool("isJumping", true);
 
             print("Jumped");
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-            anim.SetBool("isJumping", false);
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        anim.SetBool("isJumping", false);
     }
+  
 
     //private void OnCollisionExit(Collision collision)
     //{
