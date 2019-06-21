@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tab_operateTab : MonoBehaviour {
+public class Tab_operateTab : MonoBehaviour
+{
 
     public enum TabInputDirection { Horizontal, Vertical };
 
