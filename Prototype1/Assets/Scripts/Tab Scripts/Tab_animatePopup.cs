@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tab_animatePopup : Tab_operatePopup
+public class Tab_animatePopup : BASECLASS_Tab_operatePopup
 {
     // ------------------------------------------------------------------------------------------------------ INSPECTOR INTERFACE - YOU CAN SAFELY TWEAK THESE VALUES
     [SerializeField] private List<Animator> animateMe;
@@ -10,12 +10,12 @@ public class Tab_animatePopup : Tab_operatePopup
     [SerializeField] private float animationSpeed = 0.2f;
     // -------------------------------------------------------------------------------------------------------------------------------------- INSPECTOR INTERFACE END
 
-    private Tab_operateTab operateTabScript;
+    private BASECLASS_Tab_operateTab operateTabScript;
     private float tabMovement;
 
     private void Start()
     {
-        operateTabScript = GetComponent<Tab_operateTab>();
+        operateTabScript = GetComponent<BASECLASS_Tab_operateTab>();
         if (operateTabScript == null)
         {
             Debug.Log("The object this script is attached to needs to have a script that operates the tab!");

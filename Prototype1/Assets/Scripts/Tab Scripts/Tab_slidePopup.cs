@@ -8,7 +8,7 @@ public enum PopupSlideDirection
     Vertical
 }
 
-public class Tab_slidePopup : Tab_operatePopup
+public class Tab_slidePopup : BASECLASS_Tab_operatePopup
 {
     // ------------------------------------------------------------------------------------------------------ INSPECTOR INTERFACE - YOU CAN SAFELY TWEAK THESE VALUES
     [Header("")]
@@ -19,13 +19,13 @@ public class Tab_slidePopup : Tab_operatePopup
     [SerializeField] private float movementSpeed = 1.0f;
     // --------------------------------------------------------------------------------------------------------------------------------------- INSPECTOR INTERFACE END
 
-    private Tab_operateTab operateTabScript;
+    private BASECLASS_Tab_operateTab operateTabScript;
     private float tabMovement;
 
     private void Start()
     {
         // retrieve the component from which we will read the input
-        operateTabScript = GetComponent<Tab_operateTab>();
+        operateTabScript = GetComponent<BASECLASS_Tab_operateTab>();
         if (operateTabScript == null)
         {
             Debug.Log("The object this script is attached to needs to have a script that operates the tab!");

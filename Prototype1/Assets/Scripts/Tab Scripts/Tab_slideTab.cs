@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tab_slideTab : Tab_operateTab
+public class Tab_slideTab : BASECLASS_Tab_operateTab
 {
     // ------------------------------------------------------------------------------------------------------ INSPECTOR INTERFACE - YOU CAN SAFELY TWEAK THESE VALUES
 
