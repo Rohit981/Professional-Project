@@ -1,17 +1,21 @@
 fileFormatVersion: 2
-guid: 08593781ab2ec224696c2f55aebce7e1
+guid: dd88f41330d930149aa2ffbc67a944c3
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: pCone1
+    100004: pCone2
     400000: //RootNode
-    2100000: House_Stone
-    2100002: Candles
-    2100004: Fire
-    2100006: Fire2
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Chandelier1
+    400002: pCone1
+    400004: pCone2
+    2100000: lambert1
+    2300000: pCone1
+    2300002: pCone2
+    3300000: pCone1
+    3300002: pCone2
+    4300000: pCone1
+    4300002: pCone2
   externalObjects: {}
   materials:
     importMaterials: 1
