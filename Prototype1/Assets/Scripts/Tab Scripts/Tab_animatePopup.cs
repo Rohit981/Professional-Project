@@ -5,7 +5,7 @@ using UnityEngine;
 public class Tab_animatePopup : Tab_operatePopup
 {
     // ------------------------------------------------------------------------------------------------------ INSPECTOR INTERFACE - YOU CAN SAFELY TWEAK THESE VALUES
-    [SerializeField] private List<Animator> popUpAnimators;
+    [SerializeField] private List<Animator> animateMe;
     [Tooltip("How fast the animation plays relative to tab movement")]
     [SerializeField] private float animationSpeed = 0.2f;
     // -------------------------------------------------------------------------------------------------------------------------------------- INSPECTOR INTERFACE END
@@ -25,15 +25,15 @@ public class Tab_animatePopup : Tab_operatePopup
     // modify animation's time value based on how much mouse has moved
     private void playAnimations()
     {
-        if (popUpAnimators.Count > 0)
+        if (animateMe.Count > 0)
         {
-            foreach (Animator anim in popUpAnimators)
+            foreach (Animator anim in animateMe)
             {
                 anim.Play(0, 0, anim.GetCurrentAnimatorStateInfo(0).normalizedTime + (tabMovement * animationSpeed));
             }
         }
         else
-            Debug.Log("You attached a animate pop up script but you did not give me any pop up to animate! :(");
+            Debug.Log("You attached an animate pop up script but you did not give me any pop up to animate! :(");
             
     }
 

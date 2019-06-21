@@ -8,11 +8,11 @@ public class Player_Movement : MonoBehaviour
 
     internal Rigidbody2D rb;
     private bool movementActivated;
-    bool hasAlreadyJumped = false;
+    //bool hasAlreadyJumped = false; - unity says this is assigned but never used? temporarily commented it out to get rid of it in the console - MB
 
     [SerializeField] internal float maxSpeed = 3.0f;
     [SerializeField] float acceleration = 9.0f;
-    private bool allDetached = false;
+    //private bool allDetached = false; - unity says this is assigned but never used? temporarily commented it out to get rid of it in the console - MB
     private int numberofTotalObjects = 0;
     int counter = 0;
 
