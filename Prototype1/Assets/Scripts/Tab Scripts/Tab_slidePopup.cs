@@ -13,7 +13,6 @@ public class Tab_slidePopup : Tab_operatePopup
     // ------------------------------------------------------------------------------------------------------ INSPECTOR INTERFACE - YOU CAN SAFELY TWEAK THESE VALUES
     [Header("")]
     [SerializeField] public PopupSlideDirection slideDirection = PopupSlideDirection.Horizontal;
-    [Tooltip("You need to drag the parent popUp in here so that both the popup and the shadow will move")]
     [SerializeField] private List<Transform> slideMe;
     [Tooltip("How fast the popup moves relative to tab movement")]
     [SerializeField] private float movementSpeed = 1.0f;
