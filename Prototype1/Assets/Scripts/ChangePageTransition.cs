@@ -30,10 +30,5 @@ public class ChangePageTransition : MonoBehaviour {
         secondChapterPage.SetActive(true);
         firstChapterPage.SetActive(false);
     }
-
-    void ChangeAudienceRotation()
-    {
-        Audience.transform.Rotate()
-    }
-
+    
 }
