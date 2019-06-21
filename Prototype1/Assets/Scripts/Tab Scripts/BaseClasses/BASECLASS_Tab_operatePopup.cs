@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tab_operatePopup : MonoBehaviour {
+public class BASECLASS_Tab_operatePopup : MonoBehaviour {
 
 
 }
