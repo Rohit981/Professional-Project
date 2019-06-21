@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum TabInputDirection { Horizontal, Vertical };
-
 public class Tab_slideTab : Tab_operateTab
 {
     // ------------------------------------------------------------------------------------------------------ INSPECTOR INTERFACE - YOU CAN SAFELY TWEAK THESE VALUES
@@ -18,11 +16,10 @@ public class Tab_slideTab : Tab_operateTab
     [Tooltip("How far the tab moves relative to mouse movement.")]
     [SerializeField] private float mouseSensitivity = 10;
     [Tooltip("How fast the tab interpolates to its final position. Anything beyond 0.3 is probably going to be too fast for the human eye to notice.")]
-    [SerializeField, Range(0.01f, 0.5f)] private float lerpSpeed = 0.15f;
+    [SerializeField, Range(0.01f, 0.5f)] private float lerpSpeed = 0.2f;
 
     // --------------------------------------------------------------------------------------------------------------------------------------- INSPECTOR INTERFACE END
-    
-    private bool selected = false;
+
     private float mouseMovement;
 
     // these are used to draw the gizmos and to check if we're going beyond boundaries
@@ -31,16 +28,6 @@ public class Tab_slideTab : Tab_operateTab
 
     // An easing function will be used to slowly move tab toward the target
     private Vector3 lerpTargetPosition;
-
-    // This runs when the mouse is hovering over the Tab
-    void OnMouseOver()
-    {
-        // if left mouse is clicked when hovering on the Tab, activate selection
-        if (Input.GetMouseButtonDown(0))
-        {
-            selected = true;
-        }
-    }
 
     // draw a vertical gizmo line
     void drawVerticalGizmoLine(Vector3 lineStart)
@@ -55,7 +42,7 @@ public class Tab_slideTab : Tab_operateTab
     {
         limit1 = transform.position;
         limit2 = transform.position;
-        
+
         switch (inputDirection)
         {
             case TabInputDirection.Horizontal:
@@ -69,7 +56,6 @@ public class Tab_slideTab : Tab_operateTab
                 break;
         }
     }
-
 
     // draw gizmos for limits and object centre. only update limits' position if the Application is not running (edit mode)
     void OnDrawGizmosSelected()
@@ -87,23 +73,21 @@ public class Tab_slideTab : Tab_operateTab
     }
 
     // Use this for initialization
-    void Start()
+    new void Start()
     {
+        base.Start();
         updateLimitsPositions();
         lerpTargetPosition = transform.position;
     }
 
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
-        if (selected)
-        {
-            updateLerpTargetPosition();
-            // if mouse left click is not being held down, release selection
-            if (!Input.GetMouseButton(0))
-                selected = false;
-        }
+        base.Update();
+
+        if (selected) updateLerpTargetPosition();
+
         updatePosition();
     }
 
@@ -148,3 +132,4 @@ public class Tab_slideTab : Tab_operateTab
         }
     }
 }
+
