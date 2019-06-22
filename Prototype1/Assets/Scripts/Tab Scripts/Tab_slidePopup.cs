@@ -14,6 +14,16 @@ public class Tab_slidePopup : Tab_operatePopup
     [Header("")]
     [SerializeField] public PopupSlideDirection slideDirection = PopupSlideDirection.Horizontal;
     [SerializeField] private List<Transform> slideMe;
+
+    [Header("")]
+    [SerializeField] public bool fixedLimits;
+    private const float MAX_OFFSET = 5;
+    [ConditionalHide("fixedLimits", true, false, 0, -MAX_OFFSET)]
+    [SerializeField] private float limitOffset1 = -1;
+    [ConditionalHide("fixedLimits", true, false, 0, MAX_OFFSET)]
+    [SerializeField] private float limitOffset2 = 1;
+
+    [ConditionalHide("fixedLimits", true, true)]
     [Tooltip("How fast the popup moves relative to tab movement")]
     [SerializeField] private float movementSpeed = 1.0f;
     // --------------------------------------------------------------------------------------------------------------------------------------- INSPECTOR INTERFACE END
@@ -35,7 +45,7 @@ public class Tab_slidePopup : Tab_operatePopup
     private void Update()
     {
         // how much the tab moved/rotated since last frame
-        tabMovement = operateTabScript.getTabMovement();
+        tabMovement = operateTabScript.tabMovement;
 
         // if there has been any movement since last frame
         if (tabMovement != 0)

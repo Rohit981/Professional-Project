@@ -34,7 +34,7 @@ public class Tab_rotatePopup : MonoBehaviour
     private void Update()
     {
         // how much the tab moved/rotated since last frame
-        tabMovement = operateTabScript.getTabMovement();
+        tabMovement = operateTabScript.tabMovement;
 
         // if there has been any movement since last frame
         if (tabMovement != 0)

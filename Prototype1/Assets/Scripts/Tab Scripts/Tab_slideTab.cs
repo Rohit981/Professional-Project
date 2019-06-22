@@ -15,27 +15,25 @@ public class Tab_slideTab : Tab_operateTab
     [SerializeField, Range(0, MAX_OFFSET)] private float limitOffset2 = 1;
     [Tooltip("How far the tab moves relative to mouse movement.")]
     [SerializeField] private float mouseSensitivity = 10;
-    [Tooltip("How fast the tab interpolates to its final position. Anything beyond 0.3 is probably going to be too fast for the human eye to notice.")]
-    [SerializeField, Range(0.01f, 0.5f)] private float lerpSpeed = 0.5f;
+
+    /*
+    [SerializeField] private bool interpolationActive;
+    [Tooltip("How fast the tab interpolates to its final position. Anything beyond 0.2 is probably going to be too fast for the human eye to notice.")]
+    [SerializeField, Range(0.01f, 0.5f)] private float interpolationSpeed = 0.5f;
+    */
 
     // --------------------------------------------------------------------------------------------------------------------------------------- INSPECTOR INTERFACE END
-
-    private float mouseMovement;
 
     // these are used to draw the gizmos and to check if we're going beyond boundaries
     private Vector3 limit1;
     private Vector3 limit2;
 
+    /*
     // An easing function will be used to slowly move tab toward the target
-    private Vector3 lerpTargetPosition;
-
-    // draw a vertical gizmo line
-    void drawVerticalGizmoLine(Vector3 lineStart)
-    {
-        Vector3 lineEnd = lineStart;
-        lineEnd.y = 20;
-        Gizmos.DrawLine(lineStart, lineEnd);
-    }
+    private Vector3 interpolateFrom;
+    private Vector3 interpolateTo;
+    float t = 0.0f;
+    */
 
     // update limits positions based on the object's position
     void updateLimitsPositions()
@@ -65,11 +63,10 @@ public class Tab_slideTab : Tab_operateTab
             updateLimitsPositions();
         }
         Gizmos.color = Color.red;
-        drawVerticalGizmoLine(limit1);
-        drawVerticalGizmoLine(limit2);
+        Gizmos.DrawRay(limit1, Vector3.up);
+        Gizmos.DrawRay(limit2, Vector3.up);
         Gizmos.color = Color.blue;
-        drawVerticalGizmoLine(transform.position);
-
+        Gizmos.DrawRay(transform.position, Vector3.up);
     }
 
     // Use this for initialization
@@ -77,59 +74,112 @@ public class Tab_slideTab : Tab_operateTab
     {
         base.Start();
         updateLimitsPositions();
-        lerpTargetPosition = transform.position;
-    }
 
+        /*
+        if (interpolationActive)
+        {
+            interpolateFrom = transform.position;
+            interpolateTo = transform.position;
+        }
+        */
+    }
 
     // Update is called once per frame
     new void Update()
     {
         base.Update();
 
-        if (selected) updateLerpTargetPosition();
+        if (selected)
+        {
+            UpdatePosition();
+        }
 
-        updatePosition();
     }
 
+    private void UpdatePosition()
+    {
+        tabMovement = 0;
+        switch (inputDirection)
+        {
+            case TabInputDirection.Horizontal:
+                tabMovement = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+                transform.position += new Vector3(tabMovement, 0, 0);
+                // check horizontal limits
+                if (transform.position.x < limit1.x)
+                {
+                    transform.position = limit1;
+                    tabMovement = 0;
+                }
+                if (transform.position.x > limit2.x)
+                {
+                    transform.position = limit2;
+                    tabMovement = 0;
+                }
+                TabMovementPercentage = (transform.position.x - limit1.x) / (limit2.x - limit1.x);
+                
+                break;
+
+            case TabInputDirection.Vertical:
+                if (transform.position.z >= limit1.z && transform.position.z <= limit2.z)
+                {
+                    tabMovement = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+                    transform.position += new Vector3(0, 0, tabMovement);
+                    // check vertical limits
+                    if (transform.position.z < limit1.z) transform.position = limit1;
+                    if (transform.position.z > limit2.z) transform.position = limit2;
+                    TabMovementPercentage = (transform.position.z - limit1.z) / (limit2.z - limit1.z);
+                }
+                break;
+        }
+    }
+    
+
+
+    /*
     private void updatePosition()
     {
-        if (lerpTargetPosition != transform.position)
+        if (interpolateTo != transform.position)
         {
             switch (inputDirection)
             {
                 case TabInputDirection.Horizontal:
-                    float lerpedValueX = Mathf.Lerp(transform.position.x, lerpTargetPosition.x, lerpSpeed);
+                    float lerpedValueX = Mathf.Lerp(interpolateFrom.x, interpolateTo.x, t);
                     tabMovement = lerpedValueX - transform.position.x;
                     transform.position = new Vector3(lerpedValueX, transform.position.y, transform.position.z);
                     break;
 
                 case TabInputDirection.Vertical:
-                    float lerpedValueZ = Mathf.Lerp(transform.position.z, lerpTargetPosition.z, lerpSpeed);
+                    float lerpedValueZ = Mathf.Lerp(interpolateFrom.z, interpolateTo.z, t);
                     tabMovement = lerpedValueZ - transform.position.z;
                     transform.position = new Vector3(transform.position.x, transform.position.y, lerpedValueZ);
                     break;
             }
+
+            t += interpolationSpeed * Time.deltaTime;
         }
+        //TabMovementPercentage = tabMovement / limitOffset2 - limitOffset1;
     }
 
-    private void updateLerpTargetPosition()
+    private void updateInterpolationStartEndValues()
     {
+        interpolateFrom = transform.position;
         switch (inputDirection)
         {
             case TabInputDirection.Horizontal:
                 mouseMovement = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-                lerpTargetPosition += new Vector3(mouseMovement, 0, 0);
-                if (lerpTargetPosition.x < limit1.x) lerpTargetPosition.x = limit1.x;
-                if (lerpTargetPosition.x > limit2.x) lerpTargetPosition.x = limit2.x;
+                interpolateTo += new Vector3(mouseMovement, 0, 0);
+                if (interpolateTo.x < limit1.x) interpolateTo.x = limit1.x;
+                if (interpolateTo.x > limit2.x) interpolateTo.x = limit2.x;
                 break;
 
             case TabInputDirection.Vertical:
                 mouseMovement = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-                lerpTargetPosition += new Vector3(0, 0, mouseMovement);
-                if (lerpTargetPosition.z < limit1.z) lerpTargetPosition.z = limit1.z;
-                if (lerpTargetPosition.z > limit2.z) lerpTargetPosition.z = limit2.z;
+                interpolateTo += new Vector3(0, 0, mouseMovement);
+                if (interpolateTo.z < limit1.z) interpolateTo.z = limit1.z;
+                if (interpolateTo.z > limit2.z) interpolateTo.z = limit2.z;
                 break;
         }
     }
+    */
 }
 

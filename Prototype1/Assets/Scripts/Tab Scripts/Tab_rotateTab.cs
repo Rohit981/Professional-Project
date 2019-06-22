@@ -14,7 +14,7 @@ public class Tab_rotateTab : Tab_operateTab
     [SerializeField, Range(0, -MAX_OFFSET)] private float limitOffset1 = -45;
     [SerializeField, Range(0, MAX_OFFSET)] private float limitOffset2 = 45;
     [Tooltip("How far the tab moves relative to mouse movement.")]
-    [SerializeField] private float mouseSensitivity = 10;
+    //[SerializeField] private float mouseSensitivity = 10;
     //[Tooltip("How fast the tab interpolates to its final position. Anything beyond 0.3 is probably going to be too fast for the human eye to notice.")]
     //[SerializeField, Range(0.01f, 0.5f)] private float lerpSpeed = 0.2f;
 
@@ -32,8 +32,8 @@ public class Tab_rotateTab : Tab_operateTab
     // update limits positions based on the object's position
     void updateLimitsPositions()
     {
-        limit1 = transform.eulerAngles.y + limitOffset1;
-        limit2 = transform.eulerAngles.y + limitOffset2;
+        limit1 = transform.rotation.y + limitOffset1;
+        limit2 = transform.rotation.y + limitOffset2;
     }
 
     // draw gizmos for limits and object centre. only update limits' position if the Application is not running (edit mode)
@@ -43,13 +43,13 @@ public class Tab_rotateTab : Tab_operateTab
         {
             updateLimitsPositions();
         }
-        Gizmos.color = Color.red;
         Gizmos.matrix = transform.localToWorldMatrix;
+        Gizmos.color = Color.red;
         Gizmos.DrawRay(Vector3.zero, new Vector3(Mathf.Cos(limit1 * Mathf.Deg2Rad), 0, Mathf.Sin(limit1 * Mathf.Deg2Rad)));
         Gizmos.DrawRay(Vector3.zero, new Vector3(Mathf.Cos(limit2 * Mathf.Deg2Rad), 0, Mathf.Sin(limit2 * Mathf.Deg2Rad)));
 
-        Gizmos.color = Color.blue;
         Gizmos.matrix = transform.localToWorldMatrix;
+        Gizmos.color = Color.blue;
         Gizmos.DrawRay(Vector3.zero, Vector3.forward);
 
     }
