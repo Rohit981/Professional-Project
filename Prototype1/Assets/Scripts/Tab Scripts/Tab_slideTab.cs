@@ -63,10 +63,10 @@ public class Tab_slideTab : Tab_operateTab
             updateLimitsPositions();
         }
         Gizmos.color = Color.red;
-        Gizmos.DrawRay(limit1, Vector3.up);
-        Gizmos.DrawRay(limit2, Vector3.up);
+        Gizmos.DrawRay(limit1, Vector3.up * 5);
+        Gizmos.DrawRay(limit2, Vector3.up * 5);
         Gizmos.color = Color.blue;
-        Gizmos.DrawRay(transform.position, Vector3.up);
+        Gizmos.DrawRay(transform.position, Vector3.up * 5);
     }
 
     // Use this for initialization

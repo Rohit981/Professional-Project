@@ -30,9 +30,54 @@ public class Tab_slidePopup : Tab_operatePopup
 
     private Tab_operateTab operateTabScript;
     private float tabMovement;
+    private float tabMovementPercentage;
+
+    // these are used to draw the gizmos and to check if we're going beyond boundaries
+    private Vector3 limit1;
+    private Vector3 limit2;
+
+    // update limits positions based on the object's position
+    void updateLimitsPositions()
+    {
+        limit1 = slideMe[0].position;
+        limit2 = slideMe[0].position;
+        switch (slideDirection)
+        {
+            case PopupSlideDirection.Horizontal:
+                limit1.x += limitOffset1;
+                limit2.x += limitOffset2;
+                break;
+
+            case PopupSlideDirection.Vertical:
+                limit1.z += limitOffset1;
+                limit2.z += limitOffset2;
+                break;
+        }
+    }
+
+    // draw gizmos for limits and object centre. only update limits' position if the Application is not running (edit mode)
+    void OnDrawGizmosSelected()
+    {
+        if (fixedLimits)
+        {
+            if (!Application.isPlaying)
+            {
+                updateLimitsPositions();
+            }
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawRay(limit1, Vector3.up * 5);
+            Gizmos.DrawRay(limit2, Vector3.up * 5);
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawRay(slideMe[0].position, Vector3.up * 5);
+        }
+    }
 
     private void Start()
     {
+        if (fixedLimits)
+        {
+            updateLimitsPositions();
+        }
         // retrieve the component from which we will read the input
         operateTabScript = GetComponent<Tab_operateTab>();
         if (operateTabScript == null)
@@ -56,10 +101,26 @@ public class Tab_slidePopup : Tab_operatePopup
             {
                 foreach (Transform popupTransform in slideMe)
                 {
-                    switch (slideDirection)
+                    if (fixedLimits)
                     {
-                        case PopupSlideDirection.Horizontal: popupTransform.Translate(new Vector3(tabMovement * movementSpeed, 0, 0)); break;
-                        case PopupSlideDirection.Vertical: popupTransform.Translate(new Vector3(0, 0, tabMovement * movementSpeed)); break;
+                        tabMovementPercentage = operateTabScript.TabMovementPercentage;
+                        switch (slideDirection)
+                        {
+                            case PopupSlideDirection.Horizontal:
+                                popupTransform.transform.position = new Vector3(limit1.x + (tabMovementPercentage * (limit2.x - limit1.x)), popupTransform.position.y, popupTransform.position.z);
+                                break;
+                            case PopupSlideDirection.Vertical:
+                                popupTransform.transform.position = new Vector3(popupTransform.position.x, popupTransform.position.y, limit1.z + (tabMovementPercentage * (limit2.z - limit1.z)));
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        switch (slideDirection)
+                        {
+                            case PopupSlideDirection.Horizontal: popupTransform.Translate(new Vector3(tabMovement * movementSpeed, 0, 0)); break;
+                            case PopupSlideDirection.Vertical: popupTransform.Translate(new Vector3(0, 0, tabMovement * movementSpeed)); break;
+                        }
                     }
                 }
             }
