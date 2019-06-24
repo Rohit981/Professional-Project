@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Tab_rotatePopup : MonoBehaviour
 {
+    private enum RotationAxisDirection { X, Y, Z }
+
     // ------------------------------------------------------------------------------------------------------ INSPECTOR INTERFACE - YOU CAN SAFELY TWEAK THESE VALUES
     [Header("")]
     [SerializeField] private Transform rotateMe;
     [Tooltip("You probably want to create an empty child object for the popup and set it at the position you want the object to rotate around. Alternatively you could rotate around an existing object.")]
     [SerializeField] private Transform rotateAroundMe;
+    [SerializeField] private RotationAxisDirection rotateAroundThisAxis = RotationAxisDirection.Y;
     [Tooltip("How fast the popup rotates relative to tab movement")]
     [SerializeField] private float rotationSpeed = 1.0f;
 
@@ -16,7 +19,7 @@ public class Tab_rotatePopup : MonoBehaviour
     private const float rotationSpeedMultiplier = 50;
     // --------------------------------------------------------------------------------------------------------------------------------------- INSPECTOR INTERFACE END
 
-
+    Vector3 rotationAxis;
     private Tab_operateTab operateTabScript;
     private float tabMovement;
 
@@ -27,6 +30,12 @@ public class Tab_rotatePopup : MonoBehaviour
         if (operateTabScript == null)
         {
             Debug.Log("The object this script is attached to needs to have a script that operates the tab!");
+        }
+        switch (rotateAroundThisAxis)
+        {
+            case RotationAxisDirection.X: rotationAxis = Vector3.right; break;
+            case RotationAxisDirection.Y: rotationAxis = Vector3.up; break;
+            case RotationAxisDirection.Z: rotationAxis = Vector3.forward; break;
         }
     }
 
@@ -46,7 +55,7 @@ public class Tab_rotatePopup : MonoBehaviour
                 // slide all the transforms in the appropriate direction (selected in the inspector)
                 else
                 {
-                    rotateMe.RotateAround(rotateAroundMe.position, Vector3.up, tabMovement * rotationSpeed * rotationSpeedMultiplier);
+                    rotateMe.RotateAround(rotateAroundMe.position, rotationAxis, tabMovement * rotationSpeed * rotationSpeedMultiplier);
                 }
             }
         }
