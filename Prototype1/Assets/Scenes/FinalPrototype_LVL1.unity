@@ -433,8 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpAnimators:
-  - {fileID: 426849965}
+  animateMe: []
   animationSpeed: 0.2
 --- !u!95 &426849965 stripped
 Animator:
@@ -1612,8 +1611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpAnimators:
-  - {fileID: 100694857}
+  animateMe: []
   animationSpeed: 0.5
 --- !u!114 &2025822362
 MonoBehaviour:
