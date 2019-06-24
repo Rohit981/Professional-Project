@@ -125,8 +125,16 @@ public class Tab_slideTab : Tab_operateTab
                     tabMovement = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
                     transform.position += new Vector3(0, 0, tabMovement);
                     // check vertical limits
-                    if (transform.position.z < limit1.z) transform.position = limit1;
-                    if (transform.position.z > limit2.z) transform.position = limit2;
+                    if (transform.position.z < limit1.z)
+                    {
+                        transform.position = limit1;
+                        tabMovement = 0;
+                    }
+                    if (transform.position.z > limit2.z)
+                    {
+                        transform.position = limit2;
+                        tabMovement = 0;
+                    }
                     TabMovementPercentage = (transform.position.z - limit1.z) / (limit2.z - limit1.z);
                 }
                 break;
