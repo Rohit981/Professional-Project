@@ -5,62 +5,66 @@ using UnityEngine;
 public class ChangeAlphaLevel : MonoBehaviour
 {
     [SerializeField]
-    float alphaLevel;
+   private float alphaLevel;
 
-    float time;
-    bool is_Timing = true;
+   private float time;
+   private bool is_Timing = true;
 
     //Variable that changes the anim time and when it reaches that time then it reaches Zero value
     [SerializeField]
-    float changeAnimtime;
+    private float changeAnimtime;
 
     [SerializeField]
-    float AlphaLevelChange;
+    private float AlphaLevelChange;
 
-    float childrenSize;
+   private float childrenSize;
 
-    
-     
+    AnimationTrigger Trigger;
+    MeshRenderer children;
+    Material[] materials;
 
     // Use this for initialization
     void Start ()
     {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
+        Trigger = FindObjectOfType<AnimationTrigger>();
+        children= GetComponentInChildren<MeshRenderer>();
+        materials = GetComponentsInChildren<Material>();
+
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
-        if(is_Timing == true)
-        {
-            time += Time.deltaTime;
+      
+            print("Entered");
+            if(is_Timing == true)
+            {
+                time += Time.deltaTime;
 
-        }
-        if(alphaLevel <= 0.2f)
-        {
-            time = 0f;
-            is_Timing = false;
-        }
+            }
+            if(alphaLevel <= 0.2f)
+            {
+                time = 0f;
+                is_Timing = false;
+            }
 
-        if (time >= changeAnimtime)
-        {
-            alphaLevel -= AlphaLevelChange;
-            time = 0f;
-        }
+            if (time >= changeAnimtime)
+            {
+                alphaLevel -= AlphaLevelChange;
+                time = 0f;
+            }
 
-        MeshRenderer[] children =  GetComponentsInChildren<MeshRenderer>();
+            Color newColor;
+            foreach(Material mat in materials)
+            {
+                newColor = children.material.color;
+                newColor.a = alphaLevel;
+                children.material.color = newColor;
 
-        Color newColor;
+            }
+         
 
-        foreach(MeshRenderer child in children)
-        {
-            newColor = child.material.color;
-            newColor.a = alphaLevel;
-            child.material.color = newColor;
-        }
-        
-        
-    
-
+       
+                
     }
 }
