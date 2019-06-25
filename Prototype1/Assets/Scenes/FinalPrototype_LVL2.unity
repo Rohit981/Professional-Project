@@ -361,12 +361,12 @@ Prefab:
     - target: {fileID: 68469162528039024, guid: bbb8e4eb2647fb642bd9806d997dd8ac,
         type: 2}
       propertyPath: m_Points.Array.data[2].y
-      value: 4.7072067
+      value: 4.1373734
       objectReference: {fileID: 0}
     - target: {fileID: 68469162528039024, guid: bbb8e4eb2647fb642bd9806d997dd8ac,
         type: 2}
       propertyPath: m_Points.Array.data[2].x
-      value: 0.32420266
+      value: 0.22798237
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bbb8e4eb2647fb642bd9806d997dd8ac, type: 2}
@@ -722,12 +722,25 @@ Prefab:
     - target: {fileID: 114308667454489500, guid: dadae6fb9f7892941ac474eed2f3e63c,
         type: 2}
       propertyPath: limitOffset2
-      value: 3.3
+      value: 1.53
       objectReference: {fileID: 0}
     - target: {fileID: 114565675210028630, guid: dadae6fb9f7892941ac474eed2f3e63c,
         type: 2}
       propertyPath: animationHasBuiltInReverse
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565675210028630, guid: dadae6fb9f7892941ac474eed2f3e63c,
+        type: 2}
+      propertyPath: allowLooping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4605578048382828, guid: dadae6fb9f7892941ac474eed2f3e63c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4605578048382828, guid: dadae6fb9f7892941ac474eed2f3e63c, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 2.889597
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dadae6fb9f7892941ac474eed2f3e63c, type: 2}
@@ -1422,7 +1435,7 @@ EdgeCollider2D:
   - {x: 117.261765, y: -62.295734}
   - {x: 167.81735, y: -78.22297}
   - {x: 195.02321, y: -107.04287}
-  - {x: 239.13937, y: -131.16328}
+  - {x: 255.40852, y: -172.73996}
 --- !u!1 &1793597664
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,6 +1516,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23356505109666060, guid: 90b8be9001da252428f5b8ff70908e04,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 913f9aceb886b8a43b55683c04c4b6ec, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 90b8be9001da252428f5b8ff70908e04, type: 2}
   m_IsPrefabParent: 0
