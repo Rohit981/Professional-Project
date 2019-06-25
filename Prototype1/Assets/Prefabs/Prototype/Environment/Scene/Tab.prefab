@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23473921168073698}
   - component: {fileID: 65454983099537718}
   - component: {fileID: 114349021536383584}
-  - component: {fileID: 114094739709437068}
+  - component: {fileID: 114700396705132602}
   m_Layer: 0
   m_Name: Tab
   m_TagString: Untagged
@@ -37,9 +37,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1866577334000758}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.618, y: -0.14, z: -3.68}
-  m_LocalScale: {x: 0.53158957, y: 0.034415472, z: 3.7081373}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 6.803, y: -0.05, z: -2.793}
+  m_LocalScale: {x: 0.7, y: 0.5, z: 0.7}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 13cc4af66be63514e9896882949b7236, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,7 +85,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1866577334000758}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: e5be8636c0f7d8f429ff40227edb232c, type: 3}
 --- !u!65 &65454983099537718
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -96,27 +96,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.2, z: 1.1335261}
-  m_Center: {x: 0, y: 0, z: 0.033238295}
---- !u!114 &114094739709437068
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1866577334000758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popUpAnimators:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  animationSpeed: -0.5
+  m_Size: {x: 0.9926895, y: 0.1311791, z: 3.3162496}
+  m_Center: {x: -1.466988e-16, y: 0, z: 0.017140595}
 --- !u!114 &114349021536383584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,8 +109,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18e15bac10fab334ea7ce1e7c6a7337a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slideDirection: 1
-  limitOffset1: -1.4
-  limitOffset2: 1.36
+  inputDirection: 0
+  limitOffset1: 0
+  limitOffset2: 1.3
   mouseSensitivity: 10
-  lerpSpeed: 0.15
+--- !u!114 &114700396705132602
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1866577334000758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b660b789a68e9524ab1d0d39fe1b46b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animateMe:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  allowLooping: 0
+  animationSpeed: 0.2
+  animationHasBuiltInReverse: 1
