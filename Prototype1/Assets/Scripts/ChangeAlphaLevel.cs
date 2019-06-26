@@ -21,15 +21,19 @@ public class ChangeAlphaLevel : MonoBehaviour
 
     AnimationTrigger Trigger;
     MeshRenderer children;
-    Material[] materials;
+    
+    Material[] mats;
+
+    Renderer[] rends;
+   
 
     // Use this for initialization
     void Start ()
     {
         Trigger = FindObjectOfType<AnimationTrigger>();
         children= GetComponentInChildren<MeshRenderer>();
-        materials = GetComponentsInChildren<Material>();
-
+        mats = GetComponentInChildren<Renderer>().materials;
+        rends = GetComponentsInChildren<Renderer>();
     }
 
     // Update is called once per frame
@@ -37,34 +41,45 @@ public class ChangeAlphaLevel : MonoBehaviour
     {
       
             print("Entered");
-            if(is_Timing == true)
-            {
-                time += Time.deltaTime;
+            //if(is_Timing == true)
+            //{
+            //    time += Time.deltaTime;
 
-            }
-            if(alphaLevel <= 0.2f)
-            {
-                time = 0f;
-                is_Timing = false;
-            }
+            //}
+            //if(alphaLevel <= 0.2f)
+            //{
+            //    time = 0f;
+            //    is_Timing = false;
+            //}
 
-            if (time >= changeAnimtime)
-            {
-                alphaLevel -= AlphaLevelChange;
-                time = 0f;
-            }
+            //if (time >= changeAnimtime)
+            //{
+            //    alphaLevel -= AlphaLevelChange;
+            //    time = 0f;
+            //}
 
             Color newColor;
-            foreach(Material mat in materials)
+
+        foreach (Renderer rend in rends)
+        {
+            
+            for(int i = 0; i < rend.materials.Length; i++)
             {
-                newColor = children.material.color;
-                newColor.a = alphaLevel;
-                children.material.color = newColor;
+                
+                newColor = rend.material.color ;
+                newColor.a -= alphaLevel * Time.deltaTime;
+                rend.material.color = newColor;
+                print("Change Alpha level");
 
             }
-         
 
-       
-                
+        }
+
+
+
+
+
+
+
     }
 }
