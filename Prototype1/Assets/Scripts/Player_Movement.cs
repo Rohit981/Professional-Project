@@ -35,6 +35,18 @@ public class Player_Movement : MonoBehaviour
     [SerializeField]
     private Animator pageAnim;
 
+    [SerializeField]
+    private GameObject Popups;
+
+    [SerializeField]
+    private GameObject Tabs;
+
+    [SerializeField]
+    private GameObject WitchWond;
+
+    [SerializeField]
+    private GameObject Magic;
+
     // Use this for initialization
     void Start()
     {
@@ -128,7 +140,11 @@ public class Player_Movement : MonoBehaviour
         {
             print("Reached End");
             pageAnim.enabled = true;
-            this.gameObject.SetActive(false) ;
+            this.gameObject.SetActive(false);
+            Popups.SetActive(false);
+            Tabs.SetActive(false);
+            WitchWond.SetActive(false);
+            Magic.SetActive(false);
         }
     }
 

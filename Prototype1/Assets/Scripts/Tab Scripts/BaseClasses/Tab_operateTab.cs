@@ -12,7 +12,9 @@ public class Tab_operateTab : MonoBehaviour
     // highlight object when selected
     private Renderer objectRenderer;
     private Color initialColor;
-    private Color highlightColor = Color.red;
+    private Color highlightColor = Color.cyan;
+
+    MeshRenderer meshRenderer;
 
     // This runs when the mouse is hovering over the Tab
     void OnMouseOver()
@@ -23,7 +25,8 @@ public class Tab_operateTab : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 selected = true;
-                objectRenderer.material.color = highlightColor;
+                //objectRenderer.material.color = highlightColor;
+                meshRenderer.material.SetColor("_EmissionColor", highlightColor * 2);
             }
         }
     }
@@ -37,6 +40,7 @@ public class Tab_operateTab : MonoBehaviour
             {
                 selected = false;
                 objectRenderer.material.color = initialColor;
+                meshRenderer.material.SetColor("_EmissionColor", highlightColor * 0.5f);
             }
         }
     }
@@ -46,6 +50,7 @@ public class Tab_operateTab : MonoBehaviour
         selected = false;
         objectRenderer = GetComponent<Renderer>();
         initialColor = objectRenderer.material.color;
+        meshRenderer = GetComponent<MeshRenderer>();
     }
 
 

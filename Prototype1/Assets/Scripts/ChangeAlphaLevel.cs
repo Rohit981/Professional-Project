@@ -5,62 +5,81 @@ using UnityEngine;
 public class ChangeAlphaLevel : MonoBehaviour
 {
     [SerializeField]
-    float alphaLevel;
+   private float alphaLevel;
 
-    float time;
-    bool is_Timing = true;
+   private float time;
+   private bool is_Timing = true;
 
     //Variable that changes the anim time and when it reaches that time then it reaches Zero value
     [SerializeField]
-    float changeAnimtime;
+    private float changeAnimtime;
 
     [SerializeField]
-    float AlphaLevelChange;
+    private float AlphaLevelChange;
 
-    float childrenSize;
+   private float childrenSize;
 
+    AnimationTrigger Trigger;
+    MeshRenderer children;
     
-     
+    Material[] mats;
+
+    Renderer[] rends;
+   
 
     // Use this for initialization
     void Start ()
     {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
+        Trigger = FindObjectOfType<AnimationTrigger>();
+        children= GetComponentInChildren<MeshRenderer>();
+        mats = GetComponentInChildren<Renderer>().materials;
+        rends = GetComponentsInChildren<Renderer>();
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
-        if(is_Timing == true)
+      
+            print("Entered");
+            //if(is_Timing == true)
+            //{
+            //    time += Time.deltaTime;
+
+            //}
+            //if(alphaLevel <= 0.2f)
+            //{
+            //    time = 0f;
+            //    is_Timing = false;
+            //}
+
+            //if (time >= changeAnimtime)
+            //{
+            //    alphaLevel -= AlphaLevelChange;
+            //    time = 0f;
+            //}
+
+            Color newColor;
+
+        foreach (Renderer rend in rends)
         {
-            time += Time.deltaTime;
+            
+            for(int i = 0; i < rend.materials.Length; i++)
+            {
+                
+                newColor = rend.material.color ;
+                newColor.a -= alphaLevel * Time.deltaTime;
+                rend.material.color = newColor;
+                print("Change Alpha level");
+
+            }
 
         }
-        if(alphaLevel <= 0.2f)
-        {
-            time = 0f;
-            is_Timing = false;
-        }
 
-        if (time >= changeAnimtime)
-        {
-            alphaLevel -= AlphaLevelChange;
-            time = 0f;
-        }
 
-        MeshRenderer[] children =  GetComponentsInChildren<MeshRenderer>();
 
-        Color newColor;
 
-        foreach(MeshRenderer child in children)
-        {
-            newColor = child.material.color;
-            newColor.a = alphaLevel;
-            child.material.color = newColor;
-        }
-        
-        
-    
+
+
 
     }
 }
